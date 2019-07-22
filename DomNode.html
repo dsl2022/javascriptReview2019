@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <div id="div1">
+            <p id='p1'>
+                This is a paragraph
+            </p>
+            <p id='p2'>
+                this is another paragraph
+            </p>
+        </div>
+        <div id="div2">
+                <p id='p_1'>
+                    This is a paragraph
+                </p>
+                <p id='p_2'>
+                    this is another paragraph
+                </p>
+            </div>
+            <div id='count'>
+                ddd
+            </div>
+        <script>
+            // let para = document.createElement('p');
+            // let node = document.createTextNode('Test text')
+            // para.appendChild(node)
+            // document.getElementById('div1').appendChild(para);
+            // or use para.insertBefore()
+            let para2 = document.createElement('p');
+            let node = document.createTextNode('Test first')
+            para2.appendChild(node)
+            let child = document.getElementById('p_1')
+            let element = document.getElementById('div2')
+            // appendChild() does the same thing as inserBefore, except that it add that element as the last child. 
+            // also make sure all the tags have unique id. 
+            element.insertBefore(para2,child)
+
+            // this get all of a specific tag, in this case is the p tag, and store it as a collection array. 
+            // so you can count how many paragraphs, change the style of this p tag by using loop etc. 
+            let paraTags = document.getElementsByTagName("p")
+            console.log(paraTags,'test')
+            document.getElementById('count').innerHTML = paraTags.length;
+            
+        </script>
+    </body>
+
+</html>
